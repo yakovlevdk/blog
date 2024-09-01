@@ -2,8 +2,7 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import styled from "styled-components";
 import { Header } from "./Components/header/header";
-
-const Footer = () => <div>Footer</div>;
+import { Footer } from "./Components/footer/footer";
 const Content = styled.div`
   padding: 120px 0;
 `;
