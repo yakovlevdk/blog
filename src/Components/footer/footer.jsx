@@ -6,7 +6,7 @@ export const FooterContainer = ({ className }) => {
   const [weather, setWeather] = useState("");
   useEffect(() => {
     fetch(
-      "https://api.openweathermap.org/data/2.5/weather?q=Moscow&appid=768bb8a9caf51079197ec0fa14483a5c"
+      "https://api.openweathermap.org/data/2.5/weather?q=Kaliningrad&units=metric&lang=ru&appid=768bb8a9caf51079197ec0fa14483a5c"
     )
       .then((res) => res.json())
       .then(({ name, main, weather }) => {
@@ -40,13 +40,12 @@ export const FooterContainer = ({ className }) => {
 };
 
 export const Footer = styled(FooterContainer)`
-display: flex;
-justify-content: space-between;
-align-items: center
-height: 120px;
-box-shadow: 0px 2px 17px;
-width: 1000px;
-padding: 20px 40px;
-font-weight: bold;
-
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1000px;
+  height: 120px;
+  box-shadow: 0px 2px 17px;
+  padding: 20px 40px;
+  font-weight: bold;
 `;
