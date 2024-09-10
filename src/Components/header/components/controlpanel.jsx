@@ -16,12 +16,6 @@ const RightAligned = styled.div`
   align-items: center;
 `;
 
-const StyledBackDiv = styled.div`
-  &:hover {
-    cursor: pointer;
-  }
-`;
-
 const StyledLogoutDiv = styled.div`
   &:hover {
     cursor: pointer;
@@ -61,9 +55,12 @@ export const ControlPanelContainer = ({ className }) => {
         )}
       </RightAligned>
       <RightAligned>
-        <StyledBackDiv onClick={() => navigate(-1)}>
-          <Icon id="fa-backward" size="25px" margin="10px 0px 0 0" />
-        </StyledBackDiv>
+        <Icon
+          id="fa-backward"
+          size="25px"
+          margin="10px 0px 0 0"
+          onClick={() => navigate(-1)}
+        />
         <Link to="/posts">
           <Icon id="fa-file-text-o" size="25px" margin="10px 0px 0 16px" />
         </Link>

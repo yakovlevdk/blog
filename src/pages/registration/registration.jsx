@@ -13,7 +13,7 @@ import { useSelector } from "react-redux";
 import { selectUserRole } from "../../selectors/select-user-role";
 import { ROLE } from "../../constants/role";
 import { useNavigate } from "react-router-dom";
-import { ErrorMessage } from "../../Components/AuthError/autherror";
+import { AuthError } from "../../Components/AuthError/autherror";
 import { useResetForm } from "../../hooks/use-reset-form";
 const regFormSchema = yup.object().shape({
   login: yup
@@ -104,7 +104,7 @@ export const RegistrationContainer = ({ className }) => {
           Зарегистрироваться
         </Button>
 
-        {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
+        {errorMessage && <AuthError>{errorMessage}</AuthError>}
       </form>
     </div>
   );

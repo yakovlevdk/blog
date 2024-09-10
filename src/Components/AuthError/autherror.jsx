@@ -1,5 +1,5 @@
 import styled from "styled-components";
-export const ErrorMessage = styled.div`
+export const AuthError = styled.div`
   background-color: rgb(252, 173, 173);
   border: 1px solid black;
   font-size 18px;

@@ -14,7 +14,7 @@ import { useSelector } from "react-redux";
 import { selectUserRole } from "../../selectors/select-user-role";
 import { ROLE } from "../../constants/role";
 import { useNavigate } from "react-router-dom";
-import { ErrorMessage } from "../registration/registration";
+import { AuthError } from "../../Components/AuthError/autherror";
 import { useResetForm } from "../../hooks/use-reset-form";
 const authFormSchema = yup.object().shape({
   login: yup
@@ -66,7 +66,7 @@ export const AuthorizationContainer = ({ className }) => {
   const errorMessage = formError || serverError;
 
   if (role !== ROLE.GUEST) {
-    return navigate("/");
+    navigate("/");
   }
   return (
     <div className={className}>
@@ -91,7 +91,7 @@ export const AuthorizationContainer = ({ className }) => {
         </Button>
         <StyledLink to="/register"> Регистрация</StyledLink>
 
-        {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
+        {errorMessage && <AuthError>{errorMessage}</AuthError>}
       </form>
     </div>
   );

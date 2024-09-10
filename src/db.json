@@ -4,8 +4,29 @@
       "id": "001",
       "login": "anton",
       "password": "qwerty123",
-      "registred_at": "2024-04-21",
+      "registed_at": "2024-04-21",
       "role_id": 0
+    },
+    {
+      "id": "002",
+      "login": "igor",
+      "password": "123456",
+      "registed_at": "2024-04-21",
+      "role_id": 0
+    },
+    {
+      "id": "06dc",
+      "login": "yakovlevdk39",
+      "password": "lalala",
+      "registed_at": "2606-11-20 ",
+      "role_id": 2
+    },
+    {
+      "id": "06dcf",
+      "login": "yakovlevdk391",
+      "password": "lalala1",
+      "registed_at": "2606-11-20",
+      "role_id": 1
     }
   ],
   "roles": [
