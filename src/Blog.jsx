@@ -10,6 +10,9 @@ import { Post } from "./pages/post/post";
 import { useDispatch } from "react-redux";
 import { setUser } from "./actions/set-user";
 import { useLayoutEffect } from "react";
+import { Modal } from "./Components/modal/modal";
+import { Main } from "./pages/main/main";
+import { Error } from "./Components/error/error";
 const Page = styled.div`
   padding: 120px 0;
 `;
@@ -46,16 +49,21 @@ export const Blog = () => {
       <Header />
       <Page>
         <Routes>
-          <Route path="/" element={<div>главная</div>} />
+          <Route path="/" element={<Main />} />
           <Route path="/login" element=<Authorization /> />
           <Route path="/register" element=<Registration /> />
           <Route path="/users" element={<Users />} />
           <Route path="/post/:id" element=<Post /> />
-          <Route path="/post" element={<div>новая статься</div>} />
-          <Route path="*" element={<div>ошибка</div>} />
+          <Route path="/post/:id/edit" element=<Post /> />
+          <Route path="/post" element={<Post />} />
+          <Route
+            path="*"
+            element={<Error error="Такая страница не существует" />}
+          />
         </Routes>
       </Page>
       <Footer />
+      <Modal />
     </AppColumn>
   );
 };

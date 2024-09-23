@@ -6,6 +6,7 @@ import { Button } from "../../button/button";
 import { useSelector } from "react-redux";
 import { selectUserRole } from "../../../selectors/select-user-role";
 import { selectUserLogin } from "../../../selectors/select-user-login";
+import { checkAccess } from "../../../utlis/checkAccess";
 import { useDispatch } from "react-redux";
 import { logout } from "../../../actions/logout";
 import { ROLE } from "../../../constants/role";
@@ -33,7 +34,7 @@ export const ControlPanelContainer = ({ className }) => {
   const roleId = useSelector(selectUserRole);
   const login = useSelector(selectUserLogin);
   const session = useSelector(selectUserSession);
-
+  const isAdmin = checkAccess([ROLE.ADMIN], roleId);
   const onLogout = () => {
     dispatch(logout(session));
     sessionStorage.removeItem("userData");
@@ -67,17 +68,21 @@ export const ControlPanelContainer = ({ className }) => {
           margin="10px 0px 0 0"
           onClick={() => navigate(-1)}
         />
-        <Link to="/post">
-          <Icon id="fa-file-text-o" size="25px" margin="10px 0px 0 16px" />
-        </Link>
-        <Link to="/users">
-          <Icon
-            to="/users"
-            id="fa-users"
-            size="25px"
-            margin="10px 0px 0 16px"
-          />
-        </Link>
+        {isAdmin && (
+          <>
+            <Link to="/post">
+              <Icon id="fa-file-text-o" size="25px" margin="10px 0px 0 16px" />
+            </Link>
+            <Link to="/users">
+              <Icon
+                to="/users"
+                id="fa-users"
+                size="25px"
+                margin="10px 0px 0 16px"
+              />
+            </Link>
+          </>
+        )}
       </RightAligned>
     </div>
   );

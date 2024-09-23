@@ -19,4 +19,5 @@ const reducer = combineReducers({
 export const store = createStore(
   reducer,
   composeEnhancers(applyMiddleware(thunk))
+  // applyMiddleware(thunk)
 );

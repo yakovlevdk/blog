@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
+
 export const IconContainer = ({ className, id, ...props }) => (
   <div className={className} {...props}>
     <i className={`fa ${id}`} aria-hidden="true"></i>
@@ -12,3 +14,8 @@ export const Icon = styled(IconContainer)`
     cursor: pointer;
   }
 `;
+
+Icon.propTypes = {
+  id: PropTypes.string.isRequired,
+  inactive: PropTypes.bool,
+};
